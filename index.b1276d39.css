@@ -1,0 +1,88 @@
+.page {
+  color: #2f4f4f;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 115%;
+}
+
+.page__body {
+  margin: 0;
+}
+
+.people {
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), 200px);
+  justify-content: center;
+  gap: 40px 30px;
+  padding: 30px 35px 155px;
+  display: grid;
+}
+
+@media (width >= 500px) {
+  .people {
+    --columns: 4;
+  }
+}
+
+.person {
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s;
+  display: flex;
+}
+
+.person__photo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.person__photo-img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.person__rank {
+  text-align: center;
+  color: #8b0000;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.person__name {
+  color: inherit;
+  text-decoration: none;
+}
+
+.person__extra {
+  visibility: hidden;
+  box-sizing: border-box;
+  padding-block: 10px;
+}
+
+.person:hover {
+  background-color: #eee;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+
+.person:hover .person__extra {
+  visibility: visible;
+}
+
+.person:hover .person__photo-img {
+  border-radius: 20%;
+}
+/*# sourceMappingURL=index.b1276d39.css.map */
