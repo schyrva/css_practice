@@ -1,1 +1,99 @@
+.page {
+  font-family: Arial, sans-serif;
+  color: #2F4F4F;
+  font-size: 20px;
+  line-height: 115%;
 
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+  
+}
+
+.people {
+  --columns: 2;
+  
+  padding: 30px 35px 155px;
+
+  display: grid;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 30px;
+  grid-template-columns: repeat(var(--columns), 200px);
+
+  @media(min-width: 500px) {
+    --columns: 4;
+  }
+  
+}
+
+.person{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 1s;
+
+  &__photo {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 8px;
+    position: relative;
+    
+  }
+
+  &__photo-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transition: 1s;
+  }
+
+  &__rank {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__rank {
+    font-size: 16px;
+    text-align: center;
+    line-height: 32px;
+    color: #8B0000;
+  }
+
+  &__name {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__extra {
+    visibility: hidden;
+    box-sizing: border-box;
+    padding-block: 10;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    background-color: #EEEEEE;
+    border-radius: 10px;
+
+    .person__extra {
+      visibility: visible;
+    }
+
+    .person__photo-img {
+      
+      border-radius: 20%;
+    }
+    
+  }
+}
